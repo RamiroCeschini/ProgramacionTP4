@@ -908,7 +908,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 116174222}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 387820861}
+        m_TargetAssemblyTypeName: FactoryManager, Assembly-CSharp
+        m_MethodName: CreateStoneButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &116174222
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2690,6 +2702,69 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7667667299490085784, guid: c65df2ca4c250c442925bcdb64911c51, type: 3}
   m_PrefabInstance: {fileID: 382980570}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &387820859
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 387820862}
+  - component: {fileID: 387820861}
+  - component: {fileID: 387820860}
+  m_Layer: 0
+  m_Name: DecoFactory
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &387820860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 387820859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b97d020316daa1439b13af75c0fa963, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  decorations:
+  - {fileID: 9119898823514574004, guid: bc78c7ec5924f9849a1ac512e4181b9f, type: 3}
+  - {fileID: 561660852515418680, guid: 6fbeead406b0d6c4ba7793d754752d28, type: 3}
+  - {fileID: 1712009237379221061, guid: 9d9016a93e2afb14993f9ab42254fc2b, type: 3}
+--- !u!114 &387820861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 387820859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fba5bff1a5199a24e80dc185058a6149, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  factoryTransform: {fileID: 387820862}
+  decoFactory: {fileID: 387820860}
+--- !u!4 &387820862
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 387820859}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.51, y: 2.008, z: -11.68}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &396759186
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10277,7 +10352,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1519154602}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 387820861}
+        m_TargetAssemblyTypeName: FactoryManager, Assembly-CSharp
+        m_MethodName: CreateBushButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1519154602
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12796,7 +12883,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1839966321}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 387820861}
+        m_TargetAssemblyTypeName: FactoryManager, Assembly-CSharp
+        m_MethodName: CreateTreeButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1839966321
 MonoBehaviour:
   m_ObjectHideFlags: 0
