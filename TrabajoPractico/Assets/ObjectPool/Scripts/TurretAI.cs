@@ -157,7 +157,14 @@ public class TurretAI : MonoBehaviour {
         {
             lockOnPos = go.transform;
             Instantiate(muzzleEff, muzzleMain.transform.position, muzzleMain.rotation);
-            GameObject missleGo = Instantiate(bullet, muzzleMain.transform.position, muzzleMain.rotation);
+            //GameObject missleGo = Instantiate(bullet, muzzleMain.transform.position, muzzleMain.rotation);
+            GameObject missleGo = ObjectPool.SharedInstance.GetPooledObject("Catapult");
+            if(missleGo != null)
+            {
+                missleGo.transform.position = muzzleMain.transform.position;
+                missleGo.transform.rotation = muzzleMain.transform.rotation;
+                missleGo.SetActive(true);
+            }
             Projectile projectile = missleGo.GetComponent<Projectile>();
             projectile.target = lockOnPos;
         }

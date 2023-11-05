@@ -39,17 +39,20 @@ public class Projectile : MonoBehaviour {
         {
             Explosion();
             return;
+            Debug.Log("target null");
         }
 
         if (transform.position.y < -0.2F)
         {
             Explosion();
+            Debug.Log("low transform");
         }
 
         boomTimer -= Time.deltaTime;
         if (boomTimer < 0)
         {
             Explosion();
+            Debug.Log("boom timer");
         }
 
         if (type == TurretAI.TurretType.Catapult)
@@ -110,12 +113,17 @@ public class Projectile : MonoBehaviour {
             knockBackPos.y = 1;
             other.transform.position = knockBackPos;
             Explosion();
+            Debug.Log("toca target");
         }
     }
 
     public void Explosion()
     {
         Instantiate(explosion, transform.position, transform.rotation);
-        Destroy(gameObject);
+        gameObject.SetActive(false);
+        transform.position = new Vector3(100, 100, 100);
+        Debug.Log("transformo");
+        boomTimer = 10;
+        lockOn = true;
     }
 }
