@@ -7,26 +7,25 @@ public class Projectile : MonoBehaviour {
     public TurretAI.TurretType type = TurretAI.TurretType.Single;
     public Transform target;
     public bool lockOn;
-    //public bool track;
+
     public float speed = 1;
     public float turnSpeed = 1;
     public bool catapult;
 
     public float knockBack = 0.1f;
     public float boomTimer = 1;
-    //public Vector3 _startPosition;
-    //public float dist;
+
 
     public ParticleSystem explosion;
 
-    private void Start()
+    private void OnEnable()
     {
         if (catapult)
         {
             lockOn = true;
         }
 
-        if (type == TurretAI.TurretType.Single)
+        if (type == TurretAI.TurretType.Single && target != null)
         {
             Vector3 dir = target.position - transform.position;
             transform.rotation = Quaternion.LookRotation(dir);
@@ -35,25 +34,7 @@ public class Projectile : MonoBehaviour {
 
     private void Update()
     {
-        if (target == null)
-        {
-            Explosion();
-            return;
-            Debug.Log("target null");
-        }
-
-        if (transform.position.y < -0.2F)
-        {
-            Explosion();
-            Debug.Log("low transform");
-        }
-
-        boomTimer -= Time.deltaTime;
-        if (boomTimer < 0)
-        {
-            Explosion();
-            Debug.Log("boom timer");
-        }
+        CheckExplotion();
 
         if (type == TurretAI.TurretType.Catapult)
         {
@@ -67,12 +48,10 @@ public class Projectile : MonoBehaviour {
         }else if(type == TurretAI.TurretType.Dual)
         {
             Vector3 dir = target.position - transform.position;
-            //float distThisFrame = speed * Time.deltaTime;
+
             Vector3 newDirection = Vector3.RotateTowards(transform.forward, dir, Time.deltaTime * turnSpeed, 0.0f);
             Debug.DrawRay(transform.position, newDirection, Color.red);
 
-            //transform.Translate(dir.normalized * distThisFrame, Space.World);
-            //transform.LookAt(target);
 
             transform.Translate(Vector3.forward * Time.deltaTime * speed);
             transform.rotation = Quaternion.LookRotation(newDirection);
@@ -81,6 +60,26 @@ public class Projectile : MonoBehaviour {
         {
             float singleSpeed = speed * Time.deltaTime;
             transform.Translate(transform.forward * singleSpeed * 2, Space.World);
+        }
+    }
+
+    private void CheckExplotion()
+    {
+        if (target == null)
+        {
+            Explotion();
+            return;
+        }
+
+        if (transform.position.y < -0.2F)
+        {
+            Explotion();
+        }
+
+        boomTimer -= Time.deltaTime;
+        if (boomTimer < 0)
+        {
+            Explotion();
         }
     }
 
@@ -108,22 +107,22 @@ public class Projectile : MonoBehaviour {
         if (other.transform.tag == "Player")
         {
             Vector3 dir = other.transform.position - transform.position;
-            //Vector3 knockBackPos = other.transform.position * (-dir.normalized * knockBack);
             Vector3 knockBackPos = other.transform.position + (dir.normalized * knockBack);
             knockBackPos.y = 1;
             other.transform.position = knockBackPos;
-            Explosion();
-            Debug.Log("toca target");
+            Explotion();
         }
     }
 
-    public void Explosion()
+    public void Explotion()
     {
         Instantiate(explosion, transform.position, transform.rotation);
         gameObject.SetActive(false);
+    }
+
+    private void OnDisable()
+    {
         transform.position = new Vector3(100, 100, 100);
-        Debug.Log("transformo");
         boomTimer = 10;
-        lockOn = true;
     }
 }
