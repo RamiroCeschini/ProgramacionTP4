@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour {
 
-    public TurretAI.TurretType type = TurretAI.TurretType.Single;
+    public string projectileType;
     public Transform target;
     public bool lockOn;
 
@@ -25,7 +25,7 @@ public class Projectile : MonoBehaviour {
             lockOn = true;
         }
 
-        if (type == TurretAI.TurretType.Single && target != null)
+        if (projectileType == "Single" && target != null)
         {
             Vector3 dir = target.position - transform.position;
             transform.rotation = Quaternion.LookRotation(dir);
@@ -36,7 +36,7 @@ public class Projectile : MonoBehaviour {
     {
         CheckExplotion();
 
-        if (type == TurretAI.TurretType.Catapult)
+        if (projectileType == "Catapult")
         {
             if (lockOn)
             {
@@ -45,7 +45,7 @@ public class Projectile : MonoBehaviour {
                 transform.GetComponent<Rigidbody>().velocity = Vo;
                 lockOn = false;
             }
-        }else if(type == TurretAI.TurretType.Dual)
+        }else if(projectileType == "Dual")
         {
             Vector3 dir = target.position - transform.position;
 
@@ -56,7 +56,7 @@ public class Projectile : MonoBehaviour {
             transform.Translate(Vector3.forward * Time.deltaTime * speed);
             transform.rotation = Quaternion.LookRotation(newDirection);
 
-        }else if (type == TurretAI.TurretType.Single)
+        }else if (projectileType == "Single")
         {
             float singleSpeed = speed * Time.deltaTime;
             transform.Translate(transform.forward * singleSpeed * 2, Space.World);

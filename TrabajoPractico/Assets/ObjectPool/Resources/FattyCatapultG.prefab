@@ -319,7 +319,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &95344992735708116
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -336,7 +336,8 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1332660390990306
 GameObject:
   m_ObjectHideFlags: 0
@@ -379,7 +380,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4947991356735568}
-  - component: {fileID: 114097961573486468}
+  - component: {fileID: 2986654341678556731}
   m_Layer: 0
   m_Name: FattyCatapultG
   m_TagString: Untagged
@@ -405,7 +406,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114097961573486468
+--- !u!114 &2986654341678556731
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -414,7 +415,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1460030631903856}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c02d99ed6d2ff5f4da31f151e897a3e7, type: 3}
+  m_Script: {fileID: 11500000, guid: 1c8ef95e979a70f41b6b11b49eff0075, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   currentTarget: {fileID: 0}
@@ -425,9 +426,7 @@ MonoBehaviour:
   loockSpeed: 100
   randomRot: {x: 0, y: 0, z: 0}
   animator: {fileID: 0}
-  turretType: 3
   muzzleMain: {fileID: 4219618078966594}
-  muzzleSub: {fileID: 0}
   muzzleEff: {fileID: 1497772684437746, guid: bd75ef4ae186f454a90b2de71bed2854, type: 3}
   bullet: {fileID: 1986743744459060, guid: 9487ab9774304a24585b7f05a0cfcf09, type: 3}
 --- !u!1 &1581709654079874

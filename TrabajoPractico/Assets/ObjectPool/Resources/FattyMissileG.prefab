@@ -5005,7 +5005,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4268993561700370}
-  - component: {fileID: 114356927540799652}
+  - component: {fileID: 672838706104910514}
   m_Layer: 0
   m_Name: FattyMissileG
   m_TagString: Untagged
@@ -5031,7 +5031,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114356927540799652
+--- !u!114 &672838706104910514
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5040,7 +5040,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1321377731327022}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c02d99ed6d2ff5f4da31f151e897a3e7, type: 3}
+  m_Script: {fileID: 11500000, guid: aa8fcc824e593a847a6b34ef163b1927, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   currentTarget: {fileID: 0}
@@ -5051,11 +5051,10 @@ MonoBehaviour:
   loockSpeed: 100
   randomRot: {x: 0, y: 0, z: 0}
   animator: {fileID: 0}
-  turretType: 2
   muzzleMain: {fileID: 4372667440553698}
-  muzzleSub: {fileID: 4535923597716192}
   muzzleEff: {fileID: 1497772684437746, guid: bd75ef4ae186f454a90b2de71bed2854, type: 3}
   bullet: {fileID: 1773485284122676, guid: 9e0d59e1858a95d4aafcfc9ef7e94671, type: 3}
+  muzzleSub: {fileID: 4535923597716192}
 --- !u!1 &1366799779227582
 GameObject:
   m_ObjectHideFlags: 0

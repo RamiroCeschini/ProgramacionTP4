@@ -327,6 +327,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4881489855263244}
   - component: {fileID: 114488249069696938}
+  - component: {fileID: 1668021691912538668}
   m_Layer: 0
   m_Name: FattyMissileGSingle
   m_TagString: Untagged
@@ -372,9 +373,30 @@ MonoBehaviour:
   loockSpeed: 200
   randomRot: {x: 0, y: 0, z: 0}
   animator: {fileID: 0}
-  turretType: 1
   muzzleMain: {fileID: 4064778124027884}
-  muzzleSub: {fileID: 0}
+  muzzleEff: {fileID: 1497772684437746, guid: bd75ef4ae186f454a90b2de71bed2854, type: 3}
+  bullet: {fileID: 1773485284122676, guid: 9e0d59e1858a95d4aafcfc9ef7e94671, type: 3}
+--- !u!114 &1668021691912538668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1545943666229906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b46c66c6ab12e344b25450ebdefdccc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentTarget: {fileID: 0}
+  turreyHead: {fileID: 4224523858383510}
+  attackDist: 7.5
+  attackDamage: 20
+  shootCoolDown: 0.5
+  loockSpeed: 200
+  randomRot: {x: 0, y: 0, z: 0}
+  animator: {fileID: 0}
+  muzzleMain: {fileID: 4064778124027884}
   muzzleEff: {fileID: 1497772684437746, guid: bd75ef4ae186f454a90b2de71bed2854, type: 3}
   bullet: {fileID: 1773485284122676, guid: 9e0d59e1858a95d4aafcfc9ef7e94671, type: 3}
 --- !u!1 &1593263721353114
